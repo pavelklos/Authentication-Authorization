@@ -1,19 +1,21 @@
-[**HOME**]
+
+---
+##### HOME
 /
 
-[**REGISTER**] => .AspNetCore.Cookies
+---
+##### REGISTER - LOGIN
 /**register**?username=**bob**&password=**password**
-[**LOGIN**] => .AspNetCore.Cookies 
 /**login**?username=**bob**&password=**password**
-[**LOGIN**] **bad credentials**
-/**login**?username=**bob**&password=**password1**
 
-[**PROMOTE**]
+---
+##### PROMOTE - PROTECTED
 /**promote**?username=**bob**
-[**PROTECTED**]
 /**protected**
 
-[**START-PASSWORD-RESET**]
+---
+##### PASSWORD RESET (START-END)
 /**start-password-reset**?username=**bob**
-[**END-PASSWORD-RESET**]
 /**end-password-reset**?username=**bob**&password=**password**&hash=**PROTECTED-USERNAME**
+
+---
