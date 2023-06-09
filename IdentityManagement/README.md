@@ -1,21 +1,18 @@
 
 ---
 ##### HOME
-/
+/<br />
 
 ---
 ##### REGISTER - LOGIN
-/**register**?username=**bob**&password=**password**
-/**login**?username=**bob**&password=**password**
+/**register**?username=**bob**&password=**password**<br />/**login**?username=**bob**&password=**password**
 
 ---
 ##### PROMOTE - PROTECTED
-/**promote**?username=**bob**
-/**protected**
+/**promote**?username=**bob**<br />/**protected**
 
 ---
 ##### PASSWORD RESET (START-END)
-/**start-password-reset**?username=**bob**
-/**end-password-reset**?username=**bob**&password=**password**&hash=**PROTECTED-USERNAME**
+/**start-password-reset**?username=**bob**<br />/**end-password-reset**?username=**bob**&password=**password**&hash=**PROTECTED-USERNAME**
 
 ---
