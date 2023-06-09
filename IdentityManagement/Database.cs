@@ -1,13 +1,13 @@
-﻿using System;
+﻿using System.Net;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
-using System.Text.Unicode;
 
 namespace IdentityManagement
 {
     public class Database
     {
+        // GET USER HASH
         private static string UserHash(string username)
         {
             return Convert.ToBase64String(MD5.HashData(Encoding.UTF8.GetBytes(username)));
@@ -24,8 +24,15 @@ namespace IdentityManagement
 
             await using var reader = File.OpenRead(hash);
 
+            //var options = new JsonSerializerOptions
+            //{
+            //    ReadCommentHandling = JsonCommentHandling.Skip,
+            //    AllowTrailingCommas = true,
+            //};
+
             // Reads UTF-8 encoded text representing single JSON value
             // into instance of type specified by generic type parameter
+            //return await JsonSerializer.DeserializeAsync<User>(reader, options);
             return await JsonSerializer.DeserializeAsync<User>(reader);
         }
 
