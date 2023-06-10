@@ -1,9 +1,9 @@
 ## Authentication-Authorization
 
 ---
- 1.  
- 2.  
- 3.  
+ 1. **Authentication**
+ 2. **Authorization**
+ 3. **Roles, RolesIdentity**
  4. **AuthenticationSchemas**
  5. **IdentityManagement**
  6.  
