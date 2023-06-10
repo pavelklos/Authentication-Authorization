@@ -8,7 +8,9 @@ using System.Security.Claims;
 
 var builder = WebApplication.CreateBuilder(args);
 // *****************************************************************************
-// Add services to the container.
+//Add services to the container.
+//builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+//    .AddDefaultTokenProviders();
 builder.Services.AddDataProtection();
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme);
@@ -37,6 +39,34 @@ app.UseAuthorization();
 app.MapGet("/", () => "Hello World!");
 app.MapGet("/protected", () => "Something protected!")
     .RequireAuthorization("manager");
+//app.MapGet("/test", (
+//    UserManager<IdentityUser> userMgr,
+//    SignInManager<IdentityUser> signMgr
+//    //DataProtectorTokenProvider<IdentityUser> tp
+//    ) =>
+//    {
+//        // USER MANAGER from IDENTITY
+//        //userMgr.PasswordHasher;
+//        //userMgr.AddClaimAsync();
+//        //userMgr.ChangeEmailAsync();
+//        //userMgr.ChangePasswordAsync();
+//        //userMgr.ResetPasswordAsync();
+//        //userMgr.GenerateChangeEmailTokenAsync();
+//        //userMgr.GeneratePasswordResetTokenAsync();
+//        //userMgr.FindByEmailAsync();
+//        //userMgr.FindByIdAsync();
+//        //userMgr.FindByLoginAsync();
+//        //userMgr.FindByNameAsync();
+//        //userMgr.CreateAsync();
+
+//        // SIGNIN MANAGER from IDENTITY
+//        //signMgr.SignInAsync();
+//        //signMgr.SignOutAsync();
+//        //signMgr.PasswordSignInAsync();
+
+//        // TOKEN PROVIDER
+//        //tp.GenerateAsync();
+//    });
 
 app.MapGet("/register", async (
     string username,
@@ -118,7 +148,7 @@ app.MapGet("/start-password-reset", async (
 app.MapGet("/end-password-reset", async (
     string username,
     string password,
-    string hash ,
+    string hash,
     Database db,
     IPasswordHasher<User> hasher,
     IDataProtectionProvider provider

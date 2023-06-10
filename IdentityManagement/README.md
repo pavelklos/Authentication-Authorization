@@ -16,3 +16,7 @@
 /**start-password-reset**?username=**bob**<br />/**end-password-reset**?username=**bob**&password=**password**&hash=**PROTECTED-USERNAME**
 
 ---
+##### TEST IDENTITY FRAMEWORK
+/**test**
+
+---
